@@ -89,7 +89,7 @@ export class UserRepository {
     })
   }
 
-  async delete(id: number, opts?: QueryDto) {
+  async delete(id: number) {
     return await this.databaseService.user.delete({ where: { id } })
   }
 }

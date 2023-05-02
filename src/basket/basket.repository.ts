@@ -8,20 +8,12 @@ import { UpdateBasketDto } from "./dto/update-basket.dto"
 export class BasketRepository {
   constructor(private readonly databaseService: DatabaseService) {}
 
-  async create(userId: number, opts?: QueryDto) {
+  async create(userId: number) {
     return await this.databaseService.basket.create({
       data: {
         user: {
           connect: {
             id: userId,
-          },
-        },
-      },
-      include: {
-        products: {
-          include: {
-            urls: opts.include.get("urls"),
-            category: opts.include.get("category"),
           },
         },
       },

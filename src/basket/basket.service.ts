@@ -8,8 +8,8 @@ import { QueryDto } from "src/core/query-options/dto/query-options.dto"
 export class BasketService {
   constructor(private readonly basketRepository: BasketRepository) {}
 
-  async create(userId: number, opts?: QueryDto) {
-    return await this.basketRepository.create(userId, opts)
+  async create(userId: number) {
+    return await this.basketRepository.create(userId)
   }
 
   async updateOne(userId: number, dto: UpdateBasketDto, opts?: QueryDto) {

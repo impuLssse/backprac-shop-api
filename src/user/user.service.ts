@@ -8,7 +8,7 @@ import { QueryDto } from "src/core/query-options/dto/query-options.dto"
 export class UserService {
   constructor(private readonly userRepository: UserRepository) {}
 
-  async create(dto: CreateUserDto, opts?: QueryDto) {
+  async create(dto: CreateUserDto) {
     return await this.userRepository.create(dto)
   }
 
@@ -24,7 +24,7 @@ export class UserService {
     return await this.userRepository.update(id, dtoUpdate, opts)
   }
 
-  async delete(id: number, opts?: QueryDto) {
+  async delete(id: number) {
     return await this.userRepository.delete(id)
   }
 }
